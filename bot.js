@@ -45,11 +45,12 @@ const smal = {
  const message = document.getElementById('message'); 
  const buttonInput = document.getElementById('button-smul')
 
- for(let i = 0; i <= smal; i++){
-     for(let j = 0; j <= i[j]; j++ ){
-        buttonInput.innerHTML = `<input type="button" value="${j}">`
+ for(let i = 0; i < smal; i++){
+
+     for(let j = 0; j < i.j; j++ ){
+        buttonInput.innerHTML = `<input type="button" value="${i.j}">`
      }
-        buttonInput.innerHTML += `<hr>`
+        buttonInput.innerHTML = `<hr>`
  }
  
 let moodСhanges = ''
