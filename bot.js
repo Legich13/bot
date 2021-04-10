@@ -44,39 +44,44 @@ const smal = {
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  
-     buttonMessageFunc = () =>  {
-
-
-    console.log(smal.joy.includes(inputMessage.value))
-    console.log(inputMessage.value)
+let moodСhanges = []
+let bolJoy = ''
+let bolSadness = ''
+let bolAnger = ''
     
+ const bollFun = () => {
+    
+    bolJoy = smal.joy.includes(inputMessage.value)
+    bolSadness = smal.sadness.includes(inputMessage.value)
+    bolAnger = smal.anger.includes(inputMessage.value)
 
-    const bolJoy = smal.joy.includes(inputMessage.value)
-    const bolSadness = smal.sadness.includes(inputMessage.value)
-    const bolAnger = smal.anger.includes(inputMessage.value)
+ }
 
-    const moodСhanges = ''
+ 
+ const  firstStage = () =>  {
+
+    console.log(inputMessage.value)
 
     if(bolJoy == true) {
         console.log('Привет у тебя настроение огонь =)') 
-        moodСhanges = 3
+        moodСhanges.push(3)
     }
 
     else if(bolSadness == true){
         console.log('Привет все будет ок не злись')
-        moodСhanges = 2
+        moodСhanges.push(2)
     }
     
     
     else if (bolAnger == true){
         console.log('Привет не бей плиз =)')
-        moodСhanges = 1
+        moodСhanges.push(1)
         
     }
     
     else{
         console.log('не понимаю тебя')
-        moodСhanges = 0
+        moodСhanges.push(0)
         console.log(inputMessage.value)
     }
 
@@ -85,12 +90,29 @@ const smal = {
 
  }
 
- buttonMessage.onclick = () => {
+ const buttonMessageFunc = () => {
     
-    if(moodСhanges === 1 ){
+    if (moodСhanges[0] == 1 && bolSadness == true ) {
+        console.log('Твое настроение стало лучще')
+        moodСhanges.push[2]
+    }
+    else if (moodСhanges[0] == 2 && bolJoy == true ){
+        console.log('Твой настрой просто КЛАСС')
+        moodСhanges.push[3]
+    }else if (moodСhanges[0] == 0 ){
+        console.log('adsf')
+    }
+
+ }
+
+ buttonMessage.onclick = () => {
+  
+    bollFun()
+
+    if (moodСhanges[0] == undefined) {
+        firstStage()
+    }else if (moodСhanges[0] == Number){
         buttonMessageFunc()
     }
-    else if (moodСhanges == 3){
-        console.log('ok')
-    }
+   
  }
