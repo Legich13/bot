@@ -44,7 +44,7 @@ const smal = {
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  
-let moodСhanges = []
+let moodСhanges = ''
 let bolJoy = ''
 let bolSadness = ''
 let bolAnger = ''
@@ -64,24 +64,24 @@ let bolAnger = ''
 
     if(bolJoy == true) {
         console.log('Привет у тебя настроение огонь =)') 
-        moodСhanges.push(3)
+        moodСhanges = 3
     }
 
     else if(bolSadness == true){
         console.log('Привет все будет ок не злись')
-        moodСhanges.push(2)
+        moodСhanges = 2
     }
     
     
     else if (bolAnger == true){
         console.log('Привет не бей плиз =)')
-        moodСhanges.push(1)
+        moodСhanges = 1
         
     }
     
     else{
         console.log('не понимаю тебя')
-        moodСhanges.push(0)
+        moodСhanges = 0
         console.log(inputMessage.value)
     }
 
@@ -92,16 +92,15 @@ let bolAnger = ''
 
  const buttonMessageFunc = () => {
     
-    if (moodСhanges[0] == 1 && bolSadness == true ) {
-        console.log('Твое настроение стало лучще')
-        moodСhanges.push[2]
-    }
-    else if (moodСhanges[0] == 2 && bolJoy == true ){
-        console.log('Твой настрой просто КЛАСС')
-        moodСhanges.push[3]
-    }else if (moodСhanges[0] == 0 ){
-        console.log('adsf')
-    }
+   if (moodСhanges = 1 &&  bolSadness === true ) {
+       console.log('твое натроение стало чуть лучше ')
+       moodСhanges = 2
+   }else if (moodСhanges = 2 && bolJoy == true) {
+       console.log('Твое настроени уже не испортить ')
+   }else if (Boolean == false){
+        console.log('не понимаю тебя')
+        moodСhanges = 0
+   }
 
  }
 
@@ -109,9 +108,11 @@ let bolAnger = ''
   
     bollFun()
 
-    if (moodСhanges[0] == undefined) {
+    if (moodСhanges == '') {
         firstStage()
-    }else if (moodСhanges[0] == Number){
+    }else if (moodСhanges == 0){
+        moodСhanges = ''
+    }else if (moodСhanges >= 1){
         buttonMessageFunc()
     }
    
