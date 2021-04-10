@@ -92,15 +92,49 @@ let bolAnger = ''
 
  const buttonMessageFunc = () => {
     
-   if (moodСhanges = 1 &&  bolSadness === true ) {
+   if (moodСhanges == 1 &&  bolSadness === true ) {
        console.log('твое натроение стало чуть лучше ')
        moodСhanges = 2
-   }else if (moodСhanges = 2 && bolJoy == true) {
+   }
+    else if (moodСhanges == 1 && bolJoy == true){
+        console.log('ты Лучший =)')
+        moodСhanges = 3
+    }
+    else if (moodСhanges == 1 && bolAnger == true){
+        console.log('я не хотел =(((')
+        moodСhanges = 1
+    }
+   else if (moodСhanges == 2 && bolJoy == true) {
        console.log('Твое настроени уже не испортить ')
-   }else if (Boolean == false){
+       moodСhanges = 3
+   }
+   else if (moodСhanges == 2 && bolSadness == true){
+       console.log('у тебя по прежнему все ок =)')
+       moodСhanges = 2
+   }
+   else if (moodСhanges == 2 && bolAnger == true){
+        console.log('плиз не удаляй меня ')
+        moodСhanges = 1
+    }
+    else if (moodСhanges == 3 && bolJoy == true){
+        console.log('ТЫ просто пушка =)')
+        moodСhanges = 3
+    }
+    else if (moodСhanges == 3 && bolSadness == true){
+        console.log('что то у нас с тобой пошло не так ')
+        moodСhanges = 2
+    }
+    else if (moodСhanges == 3 && bolAnger == true){
+        console.log('noooooo')
+        moodСhanges = 1
+    }
+   else if (bolJoy == false){
         console.log('не понимаю тебя')
         moodСhanges = 0
    }
+   
+   
+   
 
  }
 
