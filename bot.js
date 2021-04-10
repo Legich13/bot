@@ -42,7 +42,7 @@ const smal = {
 
  const inputMessage = document.getElementById('input-message');
  const buttonMessage = document.getElementById('button-message');
- const message = document.getElementById('message');
+ const message = document.getElementById('message'); 
  
      buttonMessageFunc = () =>  {
 
@@ -55,28 +55,29 @@ const smal = {
     const bolSadness = smal.sadness.includes(inputMessage.value)
     const bolAnger = smal.anger.includes(inputMessage.value)
 
-    const moodСhanges = []
+    const moodСhanges = ''
 
     if(bolJoy == true) {
-        console.log('У тебя настроение огонь =)') 
-        moodСhanges.push(3)
+        console.log('Привет у тебя настроение огонь =)') 
+        moodСhanges = 3
     }
 
     else if(bolSadness == true){
-        console.log('не злись')
-        moodСhanges.push(2)
+        console.log('Привет все будет ок не злись')
+        moodСhanges = 2
     }
     
     
     else if (bolAnger == true){
-        console.log('не бей плиз =)')
-        moodСhanges.push(1)
+        console.log('Привет не бей плиз =)')
+        moodСhanges = 1
         
     }
     
     else{
         console.log('не понимаю тебя')
-        moodСhanges.push(0)
+        moodСhanges = 0
+        console.log(inputMessage.value)
     }
 
 
@@ -85,5 +86,11 @@ const smal = {
  }
 
  buttonMessage.onclick = () => {
-    buttonMessageFunc()
+    
+    if(moodСhanges === 1 ){
+        buttonMessageFunc()
+    }
+    else if (moodСhanges == 3){
+        console.log('ok')
+    }
  }
