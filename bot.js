@@ -1,4 +1,4 @@
-const smal = {
+let smal = {
     joy: [
        '&#128512;',
        '&#128515;',
@@ -44,15 +44,24 @@ const smal = {
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  const buttonInput = document.getElementById('button-smul')
-
- for(let i = 0; i < smal; i++){
-
-     for(let j = 0; j < i.j; j++ ){
-        buttonInput.innerHTML = `<input type="button" value="${i.j}">`
-     }
-        buttonInput.innerHTML = `<hr>`
- }
  
+ buttonInput.innerHTML = ''
+console.log(smal)
+
+ for(let key in smal){
+     console.log(key)
+       for(index of smal.key){
+            buttonInput.innerHTML += `<input type="button" value="${smal.key[index]}">`
+        }
+            buttonInput.innerHTML +='<hr>'
+
+ }
+ /* const test = smal.map((item) => {
+
+ }) */
+
+ const obg = new Object
+ console.log(obg)
 let moodСhanges = ''
 let bolJoy = ''
 let bolSadness = ''
