@@ -1,5 +1,7 @@
+
 let smal = {
     joy: [
+        'e-1f600',
        '&#128512;',
        '&#128515;',
        '&#128516;',
@@ -46,29 +48,37 @@ let smal = {
  const buttonInput = document.getElementById('button-smul')
  let valueInput = ''
  const inputMessage = document.getElementsByClassName('input-message')
-
+let inputOne = document.getElementById('input-1')
  
 
 
- //for (key in smal.joy){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.joy[key]}">`}
- //for (key in smal.sadness){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.sadness[key]}">`}
- //for (key in smal.anger){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.anger[key]}">`}
+ for (key in smal.joy){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={test} value="${smal.joy[key]}">`}
+ for (key in smal.sadness){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={console.log(56)} value="${smal.sadness[key]}">`}
+ for (key in smal.anger){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={console.log(57)} value="${smal.anger[key]}">`}
 
-for(key of inputMessage){
+
+ document.addEventListener('click', function(event) {
+    console.log(event.target.defaultValue)
+    console.log(event)
+   
+    const str =  event.target.defaultValue;
+    console.log(
+      str.replace(/\p{Emoji}/ug, (m, idx) =>
+       `[e-${m.codePointAt(0).toString(16)}]`
+      )
+    ) 
+
+   
+
+    })
+
+
+/* for(key of inputMessage){
     key.onclick = () => {
         console.log(smal.joy.includes(key.value))
         smal.joy.includes(inputMessage.value)
     }
-}
-
-
- 
- 
- 
-
-
- 
-
+} */
  
 let moodСhanges = ''
 let bolJoy = ''
@@ -82,8 +92,14 @@ let bolAnger = ''
     bolAnger = smal.anger.includes(inputMessage.value)
 
  }
-
  
+ const test = () => {
+    if(bolJoy == true) {
+        console.log('Привет у тебя настроение огонь =)') 
+        moodСhanges = 3
+    }
+ }
+
  const  firstStage = () =>  {
 
     console.log(inputMessage.value)
