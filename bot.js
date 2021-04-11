@@ -52,31 +52,40 @@ const smalTwo = {
  
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
- const buttonInput = document.getElementById('button-smul')
+ const buttonInputOne = document.getElementById('button-smul-one')
+ const buttonInputTwo = document.getElementById('button-smul-two')
+ const buttonInputTree = document.getElementById('button-smul-tree')
  let valueInput = ''
- const inputMessage = document.getElementsByClassName('input-message')
+ //const inputMessage = [...document.querySelectorAll('.input-message')]
  let inputOne = document.getElementById('input-1')
  
 
 
- for (key in smal.joy){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={test} value="${smal.joy[key]}">`}
- for (key in smal.sadness){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={console.log(56)} value="${smal.sadness[key]}">`}
- for (key in smal.anger){buttonInput.innerHTML += `<input  class="input-message" type="button" onClick={console.log(57)} value="${smal.anger[key]}">`}
+ for (key in smal.joy){buttonInputOne .innerHTML += `<input  class="input-message" type="button"  value="${smal.joy[key]}">`}
+ for (key in smal.sadness){buttonInputTwo.innerHTML += `<input  class="input-message" type="button"  value="${smal.sadness[key]}">`}
+ for (key in smal.anger){buttonInputTree.innerHTML += `<input  class="input-message" type="button" value="${smal.anger[key]}">`}
 
 
- document.addEventListener('click', function(event) {
-    console.log(event.target.defaultValue)
-    console.log(event)
-   
-    const str =  event.target.defaultValue;
-    console.log(
-      str.replace(/\p{Emoji}/ug, (m, idx) =>
-       `e-${m.codePointAt(0).toString(16)}`
-      )
-    ) 
-      
-    })
-
+ [...document.querySelectorAll('.input-message')].forEach(function(e){
+    e.addEventListener('click', function(event) {
+        console.log(event.target.defaultValue)
+        console.log(event)
+       
+        const str =  event.target.defaultValue;
+        /* console.log(
+          str.replace(/\p{Emoji}/ug, (m, idx) =>
+           `e-${m.codePointAt(0).toString(16)}`
+          )
+        )  */
+        const test0 = event.target.defaultValue.codePointAt(0)
+        const test = "&#" + `${event.target.defaultValue.codePointAt(0)}` + ";"
+        
+        console.log(test)
+           inputOne.value =  test
+    
+        })
+ })
+ 
 
 /* for(key of inputMessage){
     key.onclick = () => {
@@ -92,9 +101,9 @@ let bolAnger = ''
     
  const bollFun = () => {
     
-    bolJoy = smal.joy.includes(inputMessage.value)
-    bolSadness = smal.sadness.includes(inputMessage.value)
-    bolAnger = smal.anger.includes(inputMessage.value)
+    bolJoy = smal.joy.includes(inputOne.value)
+    bolSadness = smal.sadness.includes(inputOne.value)
+    bolAnger = smal.anger.includes(inputOne.value)
 
  }
  
@@ -107,7 +116,7 @@ let bolAnger = ''
 
  const  firstStage = () =>  {
 
-    console.log(inputMessage.value)
+    
 
     if(bolJoy == true) {
         console.log('Привет у тебя настроение огонь =)') 
