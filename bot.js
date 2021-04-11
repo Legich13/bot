@@ -1,7 +1,6 @@
 
 let smal = {
     joy: [
-        'e-1f600',
        '&#128512;',
        '&#128515;',
        '&#128516;',
@@ -42,58 +41,29 @@ let smal = {
     ]
 }
 
-const smalTwo = {
-    joy:[
-        'e-1f600'
-    ]
-}
-
-
- 
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  const buttonInputOne = document.getElementById('button-smul-one')
  const buttonInputTwo = document.getElementById('button-smul-two')
  const buttonInputTree = document.getElementById('button-smul-tree')
  let valueInput = ''
- //const inputMessage = [...document.querySelectorAll('.input-message')]
  let inputOne = document.getElementById('input-1')
  
-
-
+ // рендер смайлов
  for (key in smal.joy){buttonInputOne .innerHTML += `<input  class="input-message" type="button"  value="${smal.joy[key]}">`}
  for (key in smal.sadness){buttonInputTwo.innerHTML += `<input  class="input-message" type="button"  value="${smal.sadness[key]}">`}
  for (key in smal.anger){buttonInputTree.innerHTML += `<input  class="input-message" type="button" value="${smal.anger[key]}">`}
 
-
+// определения велью кнопки
  [...document.querySelectorAll('.input-message')].forEach(function(e){
     e.addEventListener('click', function(event) {
         console.log(event.target.defaultValue)
-        console.log(event)
-       
-        const str =  event.target.defaultValue;
-        /* console.log(
-          str.replace(/\p{Emoji}/ug, (m, idx) =>
-           `e-${m.codePointAt(0).toString(16)}`
-          )
-        )  */
-        const test0 = event.target.defaultValue.codePointAt(0)
         const test = "&#" + `${event.target.defaultValue.codePointAt(0)}` + ";"
-        
         console.log(test)
            inputOne.value =  test
-    
         })
  })
- 
-
-/* for(key of inputMessage){
-    key.onclick = () => {
-        console.log(smal.joy.includes(key.value))
-        smal.joy.includes(inputMessage.value)
-    }
-} */
- 
+ // Блок Логики
 let moodСhanges = ''
 let bolJoy = ''
 let bolSadness = ''
@@ -107,17 +77,9 @@ let bolAnger = ''
 
  }
  
- const test = () => {
-    if(bolJoy == true) {
-        console.log('Привет у тебя настроение огонь =)') 
-        moodСhanges = 3
-    }
- }
 
+// первое состояние бота приветствие 
  const  firstStage = () =>  {
-
-    
-
     if(bolJoy == true) {
         console.log('Привет у тебя настроение огонь =)') 
         moodСhanges = 3
@@ -127,27 +89,19 @@ let bolAnger = ''
         console.log('Привет все будет ок не злись')
         moodСhanges = 2
     }
-    
-    
     else if (bolAnger == true){
         console.log('Привет не бей плиз =)')
         moodСhanges = 1
         
     }
-    
     else{
         console.log('не понимаю тебя')
         moodСhanges = 0
-        console.log(inputMessage.value)
+        
     }
-
-
-    console.log(moodСhanges)
-
  }
-
+//второе состояние бота
  const buttonMessageFunc = () => {
-    
    if (moodСhanges == 1 &&  bolSadness === true ) {
        console.log('твое натроение стало чуть лучше ')
        moodСhanges = 2
@@ -188,12 +142,8 @@ let bolAnger = ''
         console.log('не понимаю тебя')
         moodСhanges = 0
    }
-   
-   
-   
-
  }
-
+//обработка логики 
  buttonMessage.onclick = () => {
   
     bollFun()
