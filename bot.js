@@ -42,13 +42,20 @@ let smal = {
     ]
 }
 
+const smalTwo = {
+    joy:[
+        'e-1f600'
+    ]
+}
+
+
  
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  const buttonInput = document.getElementById('button-smul')
  let valueInput = ''
  const inputMessage = document.getElementsByClassName('input-message')
-let inputOne = document.getElementById('input-1')
+ let inputOne = document.getElementById('input-1')
  
 
 
@@ -64,12 +71,10 @@ let inputOne = document.getElementById('input-1')
     const str =  event.target.defaultValue;
     console.log(
       str.replace(/\p{Emoji}/ug, (m, idx) =>
-       `[e-${m.codePointAt(0).toString(16)}]`
+       `e-${m.codePointAt(0).toString(16)}`
       )
     ) 
-
-   
-
+      
     })
 
 
