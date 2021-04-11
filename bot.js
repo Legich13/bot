@@ -40,28 +40,36 @@ let smal = {
     ]
 }
 
- const inputMessage = document.getElementById('input-message');
+ 
  const buttonMessage = document.getElementById('button-message');
  const message = document.getElementById('message'); 
  const buttonInput = document.getElementById('button-smul')
+ let valueInput = ''
+ const inputMessage = document.getElementsByClassName('input-message')
+
  
- buttonInput.innerHTML = ''
-console.log(smal)
 
- for(let key in smal){
-     console.log(key)
-       for(index of smal.key){
-            buttonInput.innerHTML += `<input type="button" value="${smal.key[index]}">`
-        }
-            buttonInput.innerHTML +='<hr>'
 
- }
- /* const test = smal.map((item) => {
+ //for (key in smal.joy){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.joy[key]}">`}
+ //for (key in smal.sadness){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.sadness[key]}">`}
+ //for (key in smal.anger){buttonInput.innerHTML += `<input  class="input-message" type="button" value="${smal.anger[key]}">`}
 
- }) */
+for(key of inputMessage){
+    key.onclick = () => {
+        console.log(smal.joy.includes(key.value))
+        smal.joy.includes(inputMessage.value)
+    }
+}
 
- const obg = new Object
- console.log(obg)
+
+ 
+ 
+ 
+
+
+ 
+
+ 
 let moodСhanges = ''
 let bolJoy = ''
 let bolSadness = ''
